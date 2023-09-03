@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: 🐶
+subtitle: '<p>今天来点大家想看的东西啊</p>'
+description: 
 keywords:
-author: John Doe
-language: en
+author: 狗
+language: zn
 timezone: ''
 
 # URL
@@ -29,7 +29,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
- - "page-test/**"
+ - "lab/**"
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -41,7 +41,10 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
 highlight:
@@ -103,4 +106,7 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: git@github.com:dogerddddfd/dogerddddfd.github.io.git
+  branch: gh-pages
+  message: 
