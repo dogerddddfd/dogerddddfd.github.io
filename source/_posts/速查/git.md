@@ -12,4 +12,4 @@ tags:
 #### 查看目前分支:`git branch`
 #### 切换分支:`git checkout`
 #### 添加仓库:`git remote add origin 《git链接》`
-#### `port 22: Connection refused`:关闭steamcommunity
+#### `port 22: Connection refused`:关闭steamcommunity、使用https
