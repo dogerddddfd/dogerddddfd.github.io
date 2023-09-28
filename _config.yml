@@ -4,7 +4,7 @@
 
 # Site
 title: 🐶
-subtitle: '<p>今天来点大家想看的东西啊</p>'
+subtitle: '今天来点大家想看的东西啊'
 description: 
 keywords:
 author: 狗
@@ -107,6 +107,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:dogerddddfd/dogerddddfd.github.io.git
+  repo: https://github.com/dogerddddfd/dogerddddfd.github.io.git
   branch: gh-pages
   message: 
