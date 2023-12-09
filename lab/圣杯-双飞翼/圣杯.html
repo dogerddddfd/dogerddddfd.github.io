@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+   <title>圣杯</title>
+   <!-- <link rel="stylesheet" href="index.css"> -->
+   <!-- <script src="index.js" defer></script> -->
+   <style>
+      .body {
+         width: 900px
+      }
+
+      .header,
+      .footer {
+         height: 30px;
+         width: 100%;
+         background-color: red;
+      }
+
+      .center,
+      .left,
+      .right {
+         height: 300px;
+         width: 300px
+      }
+
+      .center {
+         background-color: green;
+         float: left
+      }
+
+      /* 通过margin+相对定位设置位置 */
+      .left {
+         background-color: yellow;
+         float: left;
+         margin-left: -100%;
+         /* //左大小 */
+         position: relative;
+         left: -300px
+            /* //左大小 */
+      }
+
+      .right {
+         background-color: blue;
+         float: left;
+         margin-left: -100%;
+         /* //右大小  */
+         position: relative;
+         left: 300px;
+         /* //中大小 */
+      }
+
+      /* 两边留白 */
+      .container {
+         padding-left: 300px;
+         /* //左大小 */
+         padding-right: 300px;
+         /* //右大小 */
+      }
+
+      .container::after {
+         content: "";
+         display: block;
+         clear: both;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="body">
+      <div class="header">header</div>
+      <div class="container">
+         <div class="center">center</div>
+         <div class="left">left</div>
+         <div class="right">right</div>
+      </div>
+      <div class="footer">footer</div>
+   </div>
+
+</body>
+
+</html>

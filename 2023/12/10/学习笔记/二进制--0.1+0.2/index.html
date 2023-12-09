@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>典中典0.1+0.2问题 | 🐶</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="省流：双精度浮点数计算后存储产生精度缺失解决：使用EPSILON 123function numberepsilon(arg1,arg2)&amp;#123; 	return Math.abs(arg1 - arg2) &lt; Number.EPSILON; &#x2F;&#x2F;2^-52&amp;#125;  点击喵">
+<meta property="og:type" content="article">
+<meta property="og:title" content="典中典0.1+0.2问题">
+<meta property="og:url" content="http://example.com/2023/12/10/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BA%8C%E8%BF%9B%E5%88%B6--0.1+0.2/index.html">
+<meta property="og:site_name" content="🐶">
+<meta property="og:description" content="省流：双精度浮点数计算后存储产生精度缺失解决：使用EPSILON 123function numberepsilon(arg1,arg2)&amp;#123; 	return Math.abs(arg1 - arg2) &lt; Number.EPSILON; &#x2F;&#x2F;2^-52&amp;#125;  点击喵">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/2023/12/10/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BA%8C%E8%BF%9B%E5%88%B6--0.1+0.2/image-1.png">
+<meta property="og:image" content="http://example.com/2023/12/10/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BA%8C%E8%BF%9B%E5%88%B6--0.1+0.2/image.png">
+<meta property="article:published_time" content="2023-12-09T18:23:08.000Z">
+<meta property="article:modified_time" content="2023-12-09T18:45:43.739Z">
+<meta property="article:author" content="狗">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/12/10/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BA%8C%E8%BF%9B%E5%88%B6--0.1+0.2/image-1.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">🐶</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">今天来点大家想看的东西啊</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/2023/12/08/lab/directory/">实验室</a>
+        
+          <a class="main-nav-link" href="/repositories">八股笔记</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          
+            <a class="nav-icon" target="_blank" rel="noopener" href="https://github.com/dogerddddfd"><span class="fa fa-github"></span></a>
+          
+            <a class="nav-icon" href="/./2023/09/04/about-me/"><span class="fa fa-user-circle"></span></a>
+          
+        
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-学习笔记/二进制--0.1+0.2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/12/10/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BA%8C%E8%BF%9B%E5%88%B6--0.1+0.2/" class="article-date">
+  <time class="dt-published" datetime="2023-12-09T18:23:08.000Z" itemprop="datePublished">2023-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      典中典0.1+0.2问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>省流：双精度浮点数计算后存储产生精度缺失<br>解决：使用EPSILON</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">numberepsilon</span>(<span class="params">arg1,arg2</span>)&#123; </span><br><span class="line">	<span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">abs</span>(arg1 - arg2) &lt; <span class="title class_">Number</span>.<span class="property">EPSILON</span>; <span class="comment">//2^-52</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h3 id="点击喵"><a href="#点击喵" class="headerlink" title="点击喵"></a>点击喵</h3><span id="more"></span>
+
+<h1 id="0-1-0-2问题"><a href="#0-1-0-2问题" class="headerlink" title="0.1+0.2问题"></a>0.1+0.2问题</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/404e2958c281">js中0.1+0.2为什么不等于0.3</a></li>
+</ul>
+<h2 id="IEEE754标准"><a href="#IEEE754标准" class="headerlink" title="IEEE754标准"></a>IEEE754标准</h2><blockquote>
+<p>浮点数值：单精确度（32位）、双精确度（64位）<br>V&#x3D;(-1)^s * M * 2^E<br>s(sign) M(significand尾数) E(exponent阶码)<br><img src="/2023/12/10/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BA%8C%E8%BF%9B%E5%88%B6--0.1+0.2/image-1.png" alt="Alt text"></p>
+</blockquote>
+<blockquote>
+<p>e&#x3D;E+Bias<br>e：阶码字段值，E:实际阶码<br>Bias&#x3D;2^(k-1)-1<br>k:阶码字段位数，单精度Bias&#x3D;2^(8-1)-1&#x3D;127；双精度1023  </p>
+</blockquote>
+<ul>
+<li>浮点数值：单精确度（32位）、双精确度（64位）<ul>
+<li>js都用双精度</li>
+</ul>
+</li>
+</ul>
+<h4 id="规格化"><a href="#规格化" class="headerlink" title="规格化"></a>规格化</h4><p><img src="/2023/12/10/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BA%8C%E8%BF%9B%E5%88%B6--0.1+0.2/image.png" alt="Alt text">  </p>
+<blockquote>
+<p>小数值f：0&lt;&#x3D;f&lt;1；0.fn-1fn-2…f1f0<br>尾数M:1&lt;&#x3D;M&lt;2，M&#x3D;1+f，隐含的以1开头的表示，1.fn-1fn-2…f0<br><em>隐含的以1为开头的表示</em><br>化为1.xxx，frac只留下xxx部分</p>
+</blockquote>
+<h2 id="举例：13-125的二进制存储"><a href="#举例：13-125的二进制存储" class="headerlink" title="举例：13.125的二进制存储"></a>举例：13.125的二进制存储</h2><ul>
+<li>13.125的二进制：1101.001<blockquote>
+<p>阶码字段exp的值e&#x3D;E+127，即e&#x3D;3+127&#x3D;130</p>
+</blockquote>
+</li>
+</ul>
+<p>单精度：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>  <span class="number">10000010</span>  <span class="number">101001</span> <span class="number">00000000000000000</span></span><br><span class="line">-------------------------------------</span><br><span class="line">s  exp       frac</span><br></pre></td></tr></table></figure>
+
+<h2 id="0-1的表示"><a href="#0-1的表示" class="headerlink" title="0.1的表示"></a>0.1的表示</h2><ul>
+<li>0.1的二进制表示，为0.0001100110011(0011循环)</li>
+<li>1.100110011(0011)*2^-4<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>  <span class="number">01111111011</span>  <span class="number">1001100110011001100110011001100110011001100110011001</span></span><br><span class="line">--------------------------------------------------------------------</span><br><span class="line">s  <span class="title function_">exp</span>(<span class="number">11</span>位)     <span class="title function_">frac</span>(<span class="number">52</span>位)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="0-2的二进制"><a href="#0-2的二进制" class="headerlink" title="0.2的二进制"></a>0.2的二进制</h2><ul>
+<li>0.001100110011(0011循环)</li>
+<li>1.100110011(0011)*2^-3<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>  <span class="number">01111111100</span>  <span class="number">1001100110011001100110011001100110011001100110011001</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="浮点数运算"><a href="#浮点数运算" class="headerlink" title="浮点数运算"></a>浮点数运算</h2><ul>
+<li>浮点数的加减运算一般由以下五个步骤完成：</li>
+</ul>
+<ol>
+<li>对阶</li>
+<li>尾数运算</li>
+<li>结果规格化</li>
+<li>舍入处理</li>
+<li>溢出判断</li>
+</ol>
+<h3 id="1-对阶"><a href="#1-对阶" class="headerlink" title="1.对阶"></a>1.对阶</h3><blockquote>
+<p>首先求出两浮点数阶码的差，即⊿E＝Ex-Ey，<br>将小阶码加上⊿E，使之与大阶码相等，<br>同时将小阶码对应的浮点数的尾数右移相应位数，以保证该浮点数的值不变。</p>
+</blockquote>
+<h3 id="3-结果规格化"><a href="#3-结果规格化" class="headerlink" title="3.结果规格化"></a>3.结果规格化</h3><p>左右位移为1.xxxx*2^y形式</p>
+<h3 id="4-舍入处理"><a href="#4-舍入处理" class="headerlink" title="4.舍入处理"></a>4.舍入处理</h3><ul>
+<li>就近舍入（round to nearest）：标准列出的默认舍入方式<blockquote>
+<p>若超出可保存的尾数位的多余位大于等于100…01，则多余位的值超过了最低可表示位值的一半，<br>这种情况下，舍入的方法是在尾数的最低有效位上加1；<br>若多余位小于等于011…11，则直接舍去；<br>若多余位为100…00，此时再判断尾数的最低有效位的值，若为0则直接舍去，若为1则再加1。</p>
+</blockquote>
+</li>
+<li>0舍1入法：移掉的是1，则尾数末尾加1，移掉的是0，就不加。</li>
+</ul>
+<h2 id="计算0-1-0-2"><a href="#计算0-1-0-2" class="headerlink" title="计算0.1+0.2"></a>计算0.1+0.2</h2><ol>
+<li><p>⊿E&#x3D;|-4-(-3)|&#x3D;1，0.4尾数右移1</p>
+<ul>
+<li>尾数部分我们隐含了一个最高位是1的条件，因此，移位后，会将该位一并移过来。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.1</span>=</span><br><span class="line"><span class="number">1100110011001100110011001100110011001100110011001100</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>尾数相加</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    <span class="number">1100110011001100110011001100110011001100110011001100</span></span><br><span class="line">+   <span class="number">1001100110011001100110011001100110011001100110011001</span></span><br><span class="line">    ----------------------------------------------------</span><br><span class="line">  <span class="number">100110011001100110011001100110011001100110011001100111</span></span><br></pre></td></tr></table></figure>
+<p>进位2位，去除原来最高位默认的1，相当于阶码部分加1，<br>即由原来的-3变为-2，那么，阶码部分的表示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1111111101</span></span><br></pre></td></tr></table></figure>
+<p>而尾数部分，去除最高位1，最后一位1，进行舍入，得到52位新的二进制表示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0011001100110011001100110011001100110011001100110100</span></span><br></pre></td></tr></table></figure>
+<p>最后计算的结果如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>  <span class="number">01111111101</span>  <span class="number">0011001100110011001100110011001100110011001100110100</span></span><br></pre></td></tr></table></figure>
+<p>将其转换成十进制数为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.3000000000000000444089209850062616169452667236328125</span></span><br></pre></td></tr></table></figure>
+<p>由于精度问题，只取到0.30000000000000004</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/12/10/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BA%8C%E8%BF%9B%E5%88%B6--0.1+0.2/" data-id="clpyepoo800058ctx8bsoeqv6" data-title="典中典0.1+0.2问题" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/12/08/lab/directory/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">实验室目录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/lab/" rel="tag">lab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/lab/" style="font-size: 15px;">lab</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">笔记</a> <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">读书笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/12/10/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BA%8C%E8%BF%9B%E5%88%B6--0.1+0.2/">典中典0.1+0.2问题</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/08/lab/directory/">实验室目录</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%AD%A6%E4%B9%A0%E4%B9%8B%E9%81%93/">笔记《学习之道》</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/">笔记《如何阅读一本书》</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/04/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%9C%8B%E6%87%82%E8%87%AA%E5%B7%B1%E7%9A%84%E8%84%86%E5%BC%B1/">笔记《看懂自己的脆弱》</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 狗<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/2023/12/08/lab/directory/" class="mobile-nav-link">实验室</a>
+  
+    <a href="/repositories" class="mobile-nav-link">八股笔记</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
