@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+   <title>fetch,xhr,axios test</title>
+   <!-- <link rel="stylesheet" href="index.css"> -->
+   <!-- <script src="index.js" defer></script> -->
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+   <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch">mdn:使用 Fetch</a><br>
+   <button onclick="Fetch_test()">Fetch发送</button><br>
+   <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest">mdn:XMLHttpRequest</a><br>
+   <button onclick="xhr_test()">xhr发送</button><br>
+   <a href="https://www.axios-http.cn/docs/intro">Axios 是什么?</a><br>
+   <button onclick="axios_test()">axios发送</button><br>
+</body>
+<script>
+   function Fetch_test() {
+      console.log('使用fetch发送http请求')
+      fetch('https://raw.githubusercontent.com/dogerddddfd/dogerddddfd.github.io/main/source/lab/Fetch-xhr-test/test.json')
+         .then(res => res.json()).then(data => alert(data.message)).catch(req => alert(req + '\n可能是githubusercontent挂了'))
+   }
+   function xhr_test() {
+      console.log('使用xhr发送http请求')
+      const xhr = new XMLHttpRequest()
+      xhr.open('GET', 'https://raw.githubusercontent.com/dogerddddfd/dogerddddfd.github.io/main/source/lab/Fetch-xhr-test/test.json')
+      xhr.send()
+      xhr.onreadystatechange = function () {
+         try {
+            if (xhr.readyState == 4) {
+               console.log('xhr发出')
+               if (xhr.status >= 200) {
+                  console.log('成功返回报文')
+                  alert(JSON.parse(xhr.responseText).message);
+               } else {
+                  console.log('报文返回失败')
+                  throw (new Error(`报文返回失败,http status: ${xhr.status}`))
+               }
+            } else {
+               console.log('xhr准备中')
+            }
+         } catch (e) {
+            alert(e + '\n可能是githubusercontent挂了')
+         }
+      }
+   }
+   function axios_test() {
+      console.log('使用axios发送http请求')
+      axios.get('https://raw.githubusercontent.com/dogerddddfd/dogerddddfd.github.io/main/source/lab/Fetch-xhr-test/test.json')
+         .then(res => alert(res.data.message)).catch(req => alert(req + '\n可能是githubusercontent挂了'))
+   }
+</script>
+
+</html>
