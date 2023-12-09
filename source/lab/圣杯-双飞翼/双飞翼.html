@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+   <title>双飞翼</title>
+   <!-- <link rel="stylesheet" href="index.css"> -->
+   <!-- <script src="index.js" defer></script> -->
+   <style>
+      .body {
+         width: 900px
+      }
+
+      .header,
+      .footer {
+         height: 30px;
+         width: 100%;
+         background-color: red;
+      }
+
+      .center,
+      .left,
+      .right {
+         height: 300px;
+         width: 300px
+      }
+
+      .center {
+         float: left
+      }
+
+      .center_inside {
+         height: 100%;
+         width: 100%;
+         background-color: yellow;
+         margin: 0 300px
+      }
+
+      /* 通过margin+相对定位设置位置 */
+      .left {
+         background-color: green;
+         float: left;
+         position: relative;
+         left: -300px
+      }
+
+      .right {
+         background-color: blue;
+         float: left;
+      }
+
+      .container::after {
+         content: "";
+         display: block;
+         clear: both;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="body">
+      <div class="header">header</div>
+      <div class="container">
+         <div class="center ">
+            <div class="center_inside">center</div>
+         </div>
+         <div class="left ">left</div>
+         <div class="right ">right</div>
+      </div>
+      <div class="footer">footer</div>
+   </div>
+</body>
+
+</html>

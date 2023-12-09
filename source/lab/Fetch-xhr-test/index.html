@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+   <title>sample file test</title>
+   <!-- <link rel="stylesheet" href="index.css"> -->
+   <!-- <script src="index.js" defer></script> -->
+   <style>
+      p {
+         background-color: aqua;
+         cursor: pointer;
+      }
+   </style>
+</head>
+
+<body>
+   <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch">mdn:使用 Fetch</a><br>
+   <button onclick="Fetch_test()">Fetch发送</button>
+
+</body>
+<script>
+   function Fetch_test(){
+         fetch('https://raw.githubusercontent.com/ds/仓库名/分支名/文件路径')
+   }
+</script>
+
+</html>

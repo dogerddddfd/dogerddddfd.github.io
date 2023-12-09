@@ -4,7 +4,7 @@
 
 # Site
 title: 🐶
-subtitle: '今天来点大家不想看的东西啊'
+subtitle: '今天来点大家想看的东西啊'
 description: 
 keywords:
 author: 狗
@@ -30,6 +30,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
  - "lab/**"
+ - "repositories/**"
 
 # Writing
 new_post_name: :title.md # File name of new posts
